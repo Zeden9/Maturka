@@ -1,3 +1,5 @@
+import streaks
+
 def splitDataType(table:list, character): #funkcja dzielaca tabele na 2 osobne elementy oddzielone spacja
     strings = []
     integers = []
@@ -15,7 +17,7 @@ def maxRepeatValue(table):
     currentRepeat = 1
     maxRepeat = 1
 
-    for n in range(0, len(table)):
+    for n in range(len(table)):
         temp = table[n]             #tabela do przechowywania jednej linie z tabeli
 
         for i in range(0, (len(temp)-1)): #petla przechodzaca przez kazdy znak w linii
@@ -48,9 +50,9 @@ def goldbach(value):
         if(isPrime(n)):
             pierwsze.append(n)
 
-    for n in range(0, len(pierwsze)):
+    for n in range(len(pierwsze)):
 
-        for i in range(0, len(pierwsze)):
+        for i in range(len(pierwsze)):
             if(pierwsze[n]+pierwsze[i]==value):
                 difference = abs(int(pierwsze[n]) - int(pierwsze[i]))
 
@@ -70,7 +72,13 @@ maxPowtorzenia, znak = maxRepeatValue(pary)
 
 print("Najczesciej pojawia sie znak {}, i powtarza sie {} razy.".format(znak, maxPowtorzenia))
 
-for n in range(0, len(liczby)):
+for n in range(len(liczby)):
     if(int(liczby[n])%2==0):
         value1, value2, maxDifference = goldbach(int(liczby[n]))
         print(liczby[n], value1, value2)
+
+duration, begginingIndex = streaks.streak(liczby)
+ciag = []
+for n in range(duration):
+    ciag.append(liczby[n+begginingIndex])
+print("Max streak:\n",ciag, )
