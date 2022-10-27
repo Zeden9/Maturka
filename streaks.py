@@ -5,3 +5,4 @@ def streak(list:list):
 streaks = [4,5,64,75]
 
 streak(streaks)
+print("test push")
