@@ -62,7 +62,7 @@ def goldbach(value):
     return value1, value2, maxDifference
 
 
-myFile = open('pary.txt', 'r') #otwieranie pliku
+myFile = open('Zbychu\pary.txt', 'r') #otwieranie pliku
 pary = myFile.readlines()      #przypisanie danych do tablicy
 
 liczby, litery = splitDataType(pary, " ")
