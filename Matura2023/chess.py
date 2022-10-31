@@ -1,4 +1,4 @@
-myFile = open("szachy_przyklad.txt", "r")
+myFile = open("Matura2023\szachy.txt", "r")
 game = myFile.readlines()
 
 boards = []
