@@ -29,6 +29,19 @@ for n in range(0, len(boards)):
             mostClear = 8-len(occupiedSpaces[n])
     
 
+# pieces = ['k', 'h', 's', 'g', 'w', 'p']
+# cipka=0
+# for board in boards:
+#     pizda = True
+#     board = ''.join(board)
+#     for piece in pieces:
+#         if board.count(piece) != board.count(piece.upper()):      a method from some guy - im jealous
+#             pizda = False
+#             break
+#     if pizda:
+#         cipka+=1
+# print(cipka)
+
 print(clearCollumn, mostClear)
 piecesBlack = []
 piecesWhite = []
