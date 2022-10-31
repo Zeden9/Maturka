@@ -9,12 +9,12 @@ for i in range(0, len(game), 9):
     boards.append(board)
 
 occupiedSpaces = []
-for n in range(0, len(boards)):
+for board in boards:
     occupiedSpace = []
     for x in range(0,8):
         xPusty = False
         for y in range (0,8):
-            if(boards[n][y][x] != "."):
+            if(board[y][x] != "."):
                 xPusty = True
         if(xPusty):
             occupiedSpace.append(x)
@@ -45,18 +45,17 @@ for n in range(0, len(boards)):
 print(clearCollumn, mostClear)
 piecesBlack = []
 piecesWhite = []
-for n in range(0, len(boards)):
+for board in boards:
     pieceBlack = []
-    pieceWhite = []
-    
+    pieceWhite = []  
     for x in range(0,8):
         for y in range (0,8):
-            if(boards[n][y][x] != "."): 
-                if(boards[n][y][x].isupper()):
-                    pieceWhite.append(boards[n][y][x])
+            if(board[y][x] != "."): 
+                if(board[y][x].isupper()):
+                    pieceWhite.append(board[y][x])
                     pieceWhite.sort()
                 else:
-                    pieceBlack.append(boards[n][y][x].upper())
+                    pieceBlack.append(board[y][x].upper())
                     pieceBlack.sort()
     piecesBlack.append(pieceBlack)
     piecesWhite.append(pieceWhite)
