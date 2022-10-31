@@ -43,11 +43,20 @@ for n in range(0, len(boards)):
                     pieceWhite.append(boards[n][y][x])
                     pieceWhite.sort()
                 else:
-                    pieceBlack.append(boards[n][y][x])
+                    pieceBlack.append(boards[n][y][x].upper())
                     pieceBlack.sort()
     piecesBlack.append(pieceBlack)
     piecesWhite.append(pieceWhite)
-        
 
-print(piecesWhite,"\n",piecesBlack)
+balancedBoards = 0
+leastPiecesBalanced = 100
+for n in range(0, len(boards)):
+    if(piecesBlack[n] == piecesWhite[n]):
+        balancedBoards+=1
+        if(len(piecesWhite[n]*2) < leastPiecesBalanced):
+            leastPiecesBalanced = len(piecesWhite[n]*2)
+
+
+
+print(balancedBoards, leastPiecesBalanced)
 
