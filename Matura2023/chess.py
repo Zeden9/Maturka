@@ -1,4 +1,4 @@
-myFile = open("Matura2023\szachy.txt", "r")
+myFile = open("Matura2023\szachy_przyklad.txt", "r")
 game = myFile.readlines()
 
 boards = []
@@ -30,3 +30,24 @@ for n in range(0, len(boards)):
     
 
 print(clearCollumn, mostClear)
+piecesBlack = []
+piecesWhite = []
+for n in range(0, len(boards)):
+    pieceBlack = []
+    pieceWhite = []
+    
+    for x in range(0,8):
+        for y in range (0,8):
+            if(boards[n][y][x] != "."): 
+                if(boards[n][y][x].isupper()):
+                    pieceWhite.append(boards[n][y][x])
+                    pieceWhite.sort()
+                else:
+                    pieceBlack.append(boards[n][y][x])
+                    pieceBlack.sort()
+    piecesBlack.append(pieceBlack)
+    piecesWhite.append(pieceWhite)
+        
+
+print(piecesWhite,"\n",piecesBlack)
+
